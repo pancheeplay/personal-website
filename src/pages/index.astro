@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import { getSitePosts } from '../lib/posts';
+
+const posts = await getSitePosts();
+const games = await getCollection('games');
+
+const featuredGames = games
+  .filter((game) => game.data.featured)
+  .slice(0, 4);
+---
+
+<BaseLayout title="Home">
+  <section class="intro-block">
+    <p>
+      我在这里写一些长期有价值的笔记，也会记录自己做过、玩过、推荐过的游戏。
+      这个网站希望像一本纸质册子: 简单、安静、可长期维护。
+    </p>
+  </section>
+
+  <section class="section-block">
+    <div class="section-head">
+      <h2>Latest Writing</h2>
+      <a href="/writing">View all</a>
+    </div>
+    <ul class="text-list">
+      {
+        posts.slice(0, 3).map((post) => (
+          <li>
+            <a href={`/writing/${post.slug}`}>{post.title}</a>
+            <time datetime={post.date.toISOString()}>
+              {post.date.toLocaleDateString('en-CA')}
+            </time>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section class="section-block">
+    <div class="section-head">
+      <h2>Featured Games</h2>
+      <a href="/games">View all</a>
+    </div>
+    <div class="games-grid compact">
+      {
+        featuredGames.map((game) => (
+          <a href={game.data.href} class="game-card" aria-label={game.data.title}>
+            <img src={game.data.cover} alt={game.data.title} loading="lazy" />
+            <span>{game.data.title}</span>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,337 @@
+:root {
+  --bg: #f2efe7;
+  --text: #1c1a17;
+  --muted: #5f594f;
+  --line: #d6d0c5;
+  --accent: #3f372d;
+  --layout-width: 1200px;
+  --layout-gutter: 2.5rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+  font-size: 18px;
+  line-height: 1.76;
+}
+
+a {
+  color: var(--accent);
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 1px;
+}
+
+.page-shell {
+  width: min(var(--layout-width), calc(100% - var(--layout-gutter)));
+  margin: 2rem auto 4rem;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.site-title {
+  display: inline-block;
+  font-size: 2.1rem;
+  font-style: italic;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.top-nav {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.top-nav a {
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+}
+
+.top-nav a:hover,
+.top-nav a.active {
+  border-bottom-color: var(--text);
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.25;
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(2rem, 3vw, 2.45rem);
+  margin-bottom: 0.6rem;
+}
+
+h2 {
+  font-size: 1.4rem;
+}
+
+p,
+ul {
+  margin: 0;
+}
+
+.section-block {
+  border-top: 1px solid var(--line);
+  padding-top: 1rem;
+  margin-top: 1.75rem;
+}
+
+.intro-block {
+  font-size: 1.16rem;
+  margin: 0.4rem 0 1.2rem;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 0.8rem;
+}
+
+.text-list,
+.post-list {
+  list-style: none;
+  padding: 0;
+}
+
+.text-list li,
+.post-list li {
+  border-top: 1px solid var(--line);
+  padding: 0.8rem 0;
+}
+
+.text-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.text-list time,
+.post-meta-row {
+  white-space: nowrap;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.post-title {
+  display: inline-block;
+  font-size: 1.15rem;
+  color: var(--text);
+}
+
+.post-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.post-meta-row {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 0;
+}
+
+.post-meta-row strong {
+  color: var(--accent);
+  font-size: 0.9rem;
+}
+
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.games-grid.compact {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.game-card {
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid var(--line);
+  display: block;
+}
+
+.game-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-bottom: 1px solid var(--line);
+}
+
+.game-card h2,
+.game-card p,
+.game-card span {
+  margin: 0;
+  padding: 0.6rem 0.7rem;
+}
+
+.game-card h2 {
+  font-size: 1rem;
+  padding-bottom: 0.15rem;
+}
+
+.game-card p {
+  color: var(--muted);
+  font-size: 0.92rem;
+  padding-top: 0;
+}
+
+.article {
+  padding-top: 0.2rem;
+}
+
+.article header {
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.article > * {
+  max-width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 1.2rem;
+}
+
+.article h1 {
+  font-size: clamp(2rem, 3.2vw, 2.7rem);
+  font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 650;
+  line-height: 1.18;
+  margin-bottom: 0.45rem;
+}
+
+.article-summary {
+  margin-top: 0.6rem;
+  font-style: italic;
+  color: var(--muted);
+}
+
+.article img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+}
+
+.article p {
+  font-size: clamp(1.2rem, 1.65vw, 1.35rem);
+  line-height: 1.62;
+  letter-spacing: 0.002em;
+}
+
+.article h2,
+.article h3 {
+  margin-top: 2rem;
+  font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.article blockquote {
+  margin: 0;
+  padding: 0.2rem 0 0.2rem 1rem;
+  border-left: 2px solid var(--line);
+  color: var(--muted);
+  font-style: italic;
+}
+
+.article code {
+  font-family: "SFMono-Regular", Menlo, Consolas, monospace;
+  background: #ece8de;
+  padding: 0.06rem 0.3rem;
+}
+
+.article pre {
+  background: #ece8de;
+  border: 1px solid var(--line);
+  padding: 0.8rem;
+  overflow: auto;
+}
+
+.article pre code {
+  background: none;
+  padding: 0;
+}
+
+.article sup {
+  font-size: 0.78em;
+  line-height: 0;
+}
+
+.article section[data-footnotes] {
+  margin-top: 2.4rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--line);
+}
+
+.article section[data-footnotes] ol {
+  padding-left: 1.2rem;
+}
+
+.article section[data-footnotes] li {
+  margin-bottom: 0.5rem;
+}
+
+a.external-link::after {
+  content: "↗";
+  font-size: 0.8em;
+  margin-left: 0.28em;
+  vertical-align: 0.08em;
+}
+
+@media (max-width: 700px) {
+  .page-shell {
+    width: min(var(--layout-width), calc(100% - 1.4rem));
+    margin-top: 1rem;
+  }
+
+  .games-grid,
+  .games-grid.compact {
+    grid-template-columns: 1fr;
+  }
+
+  .text-list li {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .post-line {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+  }
+
+  .article p {
+    font-size: 1.08rem;
+    line-height: 1.74;
+  }
+}

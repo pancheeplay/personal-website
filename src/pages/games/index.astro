@@ -1,0 +1,31 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const games = await getCollection('games');
+const sorted = games.sort((a, b) => {
+  const aDate = a.data.date?.getTime() ?? 0;
+  const bDate = b.data.date?.getTime() ?? 0;
+  return bDate - aDate;
+});
+---
+
+<BaseLayout title="Games">
+
+    <h1>Games</h1>
+
+    <div class="games-grid">
+      {
+        sorted.map((game) => (
+          <a href={game.data.href} class="game-card" aria-label={game.data.title}>
+            <img src={game.data.cover} alt={game.data.title} loading="lazy" />
+            <div>
+              <h2>{game.data.title}</h2>
+              <p>{game.data.summary}</p>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+
+</BaseLayout>

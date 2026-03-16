@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getSitePosts } from '../../lib/posts';
+
+export async function getStaticPaths() {
+  const posts = await getSitePosts();
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post }
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.entry.render();
+---
+
+<BaseLayout title={post.title}>
+  <article class="article">
+    <header>
+      <h1>{post.title}</h1>
+      <p class="muted">
+        <time datetime={post.date.toISOString()}>
+          {post.date.toLocaleDateString('en-CA')}
+        </time>
+      </p>
+      <p class="article-summary">{post.summary}</p>
+    </header>
+    <Content />
+  </article>
+</BaseLayout>

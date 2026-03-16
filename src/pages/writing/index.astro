@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getSitePosts } from '../../lib/posts';
+
+const posts = await getSitePosts();
+---
+
+<BaseLayout title="Writing">
+
+    <h1>Writing</h1>
+    <ul class="post-list">
+      {
+        posts.map((post) => (
+          <li>
+            <div class="post-line">
+              <a href={`/writing/${post.slug}`} class="post-title">
+                {post.title}
+              </a>
+              <div class="post-meta-row">
+                <time datetime={post.date.toISOString()}>
+                  {post.date.toLocaleDateString('en-CA')}
+                </time>
+                {post.featured && <strong>Featured</strong>}
+              </div>
+            </div>
+            {post.summary && <p>{post.summary}</p>}
+          </li>
+        ))
+      }
+    </ul>
+
+</BaseLayout>
