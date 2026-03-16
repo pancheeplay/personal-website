@@ -343,13 +343,10 @@ ul {
 }
 
 a.external-link::after {
-  content: "↗\FE0E";
+  content: "\00A0↗\FE0E";
   font-size: 0.8em;
-  margin-left: 0.28em;
   vertical-align: 0.08em;
   font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  display: inline-block;
-  text-decoration: none;
 }
 
 .game-card.external-link::after {
