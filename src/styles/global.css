@@ -85,7 +85,7 @@ h2 {
 
 p {
   font-size: 16px;
-  line-height: 1.68;
+  /* line-height: 1.68; */
 }
 ul {
   margin: 0;

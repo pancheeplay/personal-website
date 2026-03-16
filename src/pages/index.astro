@@ -2,7 +2,6 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import { withBase } from '../lib/base';
-import { formatDate } from '../lib/date';
 import { getSitePosts } from '../lib/posts';
 
 const posts = await getSitePosts();
@@ -46,9 +45,7 @@ const latest = [
             <a href={item.href}>
               {item.title}
             </a>
-            <time datetime={item.date.toISOString()}>
-              {item.kind} | {formatDate(item.date)}
-            </time>
+            <span class="muted">{item.kind}</span>
           </li>
         ))
       }
