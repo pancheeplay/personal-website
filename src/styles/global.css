@@ -314,6 +314,8 @@ a.external-link::after {
   margin-left: 0.28em;
   vertical-align: 0.08em;
   font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  display: inline-block;
+  text-decoration: none;
 }
 
 .game-card.external-link::after {
