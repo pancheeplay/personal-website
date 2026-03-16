@@ -29,6 +29,13 @@ a {
   text-decoration-thickness: 1px;
 }
 
+main a {
+  text-decoration-line: underline;
+  text-decoration-color: #898989;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.3em;
+}
+
 .page-shell {
   width: min(var(--layout-width), calc(100% - var(--layout-gutter)));
   margin: 1.5rem auto 3rem;
@@ -102,6 +109,10 @@ ul {
   margin: 0.25rem 0 0.9rem;
 }
 
+.home-latest-text {
+  margin-top: 3.3rem;
+}
+
 .muted {
   color: var(--muted);
 }
@@ -138,16 +149,6 @@ ul {
   white-space: nowrap;
   color: var(--muted);
   font-size: 0.95rem;
-}
-
-.latest-link,
-.post-title,
-.article a:not([data-footnote-ref]):not([data-footnote-backref]),
-.article a[data-footnote-backref] {
-  text-decoration-line: underline;
-  text-decoration-color: #898989;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.3em;
 }
 
 /* .post-title,

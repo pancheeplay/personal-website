@@ -33,22 +33,15 @@ const latest = [
       这个网站希望像一本纸质册子: 简单、安静、可长期维护。
     </p>
   </section>
-
-  <section class="section-block">
-    <div class="section-head">
-      <h2>Latest</h2>
-    </div>
-    <ul class="text-list">
-      {
-        latest.map((item) => (
-          <li>
-            <a href={item.href} class="latest-link">
-              {item.title}
-            </a>
-            <span class="muted">{item.kind}</span>
-          </li>
-        ))
-      }
-    </ul>
-  </section>
+  <p class="home-latest-text">
+    这是一些最新的内容：
+    {
+      latest.map((item, index) => (
+        <>
+          <a href={item.href}>{item.title}</a>
+          {index < latest.length - 1 ? '，' : ''}
+        </>
+      ))
+    }
+  </p>
 </BaseLayout>
