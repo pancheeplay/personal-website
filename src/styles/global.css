@@ -140,14 +140,25 @@ ul {
   font-size: 0.95rem;
 }
 
-.latest-link {
+.latest-link,
+.post-title,
+.article a:not([data-footnote-ref]):not([data-footnote-backref]),
+.article a[data-footnote-backref] {
+  text-decoration-line: underline;
+  text-decoration-color: #898989;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.3em;
+}
+
+/* .post-title,
+.article a:not([data-footnote-ref]):not([data-footnote-backref]) {
   display: inline-block;
   padding: 0.02rem 0.34rem;
   border-radius: 0.22rem;
   background: #ece8de;
-  box-shadow: 0 1px 0 #e0d9cc;
+  box-shadow: 0 2px 0 #e0d9cc;
   text-decoration: none;
-}
+} */
 
 .post-title {
   display: inline-block;
