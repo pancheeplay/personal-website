@@ -334,6 +334,10 @@ ul {
   margin-bottom: 0.5rem;
 }
 
+.article section[data-footnotes] > h2 {
+  display: none;
+}
+
 .article-back {
   margin-top: 1.4rem;
 }
