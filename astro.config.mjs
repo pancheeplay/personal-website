@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 import remarkGfm from 'remark-gfm';
+import remarkImageSize from './src/lib/remark-image-size.mjs';
 
 const repo = process.env.GITHUB_REPOSITORY?.split('/')[1] ?? '';
 const owner = process.env.GITHUB_REPOSITORY_OWNER ?? '';
@@ -13,7 +14,7 @@ export default defineConfig({
   site,
   base,
   markdown: {
-    remarkPlugins: [remarkGfm]
+    remarkPlugins: [remarkGfm, remarkImageSize]
   },
   image: {
     service: {

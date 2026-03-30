@@ -272,12 +272,29 @@ ul {
   color: var(--muted);
 }
 
+.article p.article-date {
+  font-size: 0.84rem;
+  line-height: 1.4;
+}
+
 .article img {
   display: block;
   width: 100%;
   max-width: 100%;
   height: auto;
   border: 1px solid var(--line);
+}
+
+.article img.image-large {
+  width: min(28rem, 100%);
+}
+
+.article img.image-medium {
+  width: min(12rem, 100%);
+}
+
+.article img.image-small {
+  width: min(6rem, 100%);
 }
 
 .article p:has(> img:only-child) {
@@ -307,10 +324,14 @@ ul {
 
 .article blockquote {
   margin: 0;
-  padding: 0.2rem 0 0.2rem 1rem;
+  padding: 0.08rem 0 0.08rem 0.85rem;
   border-left: 2px solid var(--line);
   color: var(--muted);
   font-style: italic;
+}
+
+.article blockquote p {
+  margin: 0;
 }
 
 .article code {

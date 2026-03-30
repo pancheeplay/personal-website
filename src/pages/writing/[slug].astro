@@ -20,7 +20,7 @@ const { Content } = await post.entry.render();
   <article class="article">
     <header>
       <h1>{post.title}</h1>
-      <p class="muted">
+      <p class="muted article-date">
         <time datetime={post.date.toISOString()}>
           {formatDate(post.date)}
         </time>
